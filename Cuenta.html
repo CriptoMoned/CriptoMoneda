@@ -66,10 +66,22 @@
         
       </div>
 
+      <div style="text-align: center; margin-top: 20px;">
+  <button onclick="cerrarSesion()" style="background-color: #dc3545; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+    Cerrar Sesión
+  </button>
+</div>
       <p class="btn-regresar"><a href="pagina.html">Regresar</a></p>
     </div>
   </div>
 <script>
+    function cerrarSesion() {
+    // Aquí puedes limpiar datos de sesión si los usas
+    // Por ejemplo: localStorage.clear(); o sessionStorage.clear();
+    // Luego redirigir
+    window.location.href = "login.html"; // Cambia a la ruta que uses para login
+  }
+  
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/sw.js')
