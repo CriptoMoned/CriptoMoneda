@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="./css/registro.css">
+  
+    <meta name="description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta name="theme-color" content="#007bff">
+      <!-- Íconos -->
+    <link rel="icon" href="./Imagen/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./Imagen/icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="og:title" content="Depósito USDT - CriptoMoned">
+    <meta property="og:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="twitter:title" content="Depósito USDT - CriptoMoned">
+    <meta property="twitter:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+</head>
+<body>
+    <div class="container">
+        <img src="./Imagen/logo.png" alt="Logo" class="logo">
+        <h2>Cripto Monedas</h2>
+
+        <div class="toggle-buttons">
+            <button class="toggle" id="phone-btn">Iniciar sesión por teléfono</button>
+        </div>
+
+        <form id="login-form">
+            <label for="telefono">Número de teléfono</label>
+            <input type="tel" id="telefono" placeholder="+1 | Número de teléfono" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            
+            <button type="submit" class="btn">Iniciar sesión</button>
+        </form>
+
+        <p><a href="crear_usuario.html"><button class="btn-secondary">Inscribirse</button></a></p> 
+        <div id="message"></div>
+    </div>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registrado con éxito: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar el ServiceWorker: ', error);
+        });
+    });
+  }
+</script>
+    <script src="./js/inicial_sesion.js"></script>
+</body>
+</html>

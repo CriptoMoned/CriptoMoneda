@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cripto</title>
+    <link rel="stylesheet" href="./css/styles.css">
+      
+    <meta name="description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta name="theme-color" content="#007bff">
+      <!-- Íconos -->
+    <link rel="icon" href="./Imagen/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./Imagen/icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="og:title" content="Depósito USDT - CriptoMoned">
+    <meta property="og:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="twitter:title" content="Depósito USDT - CriptoMoned">
+    <meta property="twitter:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+</head>
+<body>
+
+    <header class="main-header">
+        <img src="./Imagen/logo.png" class="header-logo" alt="Logo de la empresa">
+        <nav class="main-nav">
+            <div class="nav-buttons-container">
+                <a href="Recarga.html" class="nav-button">
+                    <img src="./Imagen/re.png" alt="Recarga" class="nav-icon">
+                    <span class="nav-label">Recarga</span>
+                </a>
+                <a href="Empresa.html" class="nav-button">
+                    <img src="./Imagen/emp2.png" alt="Empresa" class="nav-icon">
+                    <span class="nav-label">Empresa</span>
+                </a>
+                <a href="for retiro.html" class="nav-button">
+                    <img src="./Imagen/ret.png" alt="Retiro" class="nav-icon">
+                    <span class="nav-label">Retiro</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="invertir-header">
+        <h2>Invertir</h2>
+    </div>
+    
+    <div class="paquetes-comprados">
+        <h3>Paquetes Comprados:</h3>
+        <ul id="lista-paquetes" class="lista-paquetes"></ul>
+    </div>
+    
+    <div class="saldo-disponible">
+        <h3>Saldo disponible: <span id="fondos">50.00</span> USD</h3>
+    </div>
+    
+    <!-- Paquetes de inversión -->
+    <div class="contenedor-principal">
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 1" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 1</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$13</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$1.3</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 1', 13, 1.3)">Invierte ahora</button>
+            </div>
+        </div>
+        
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 2" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 2</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$36</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$3.6</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 2', 36, 3.6)">Invierte ahora</button>
+            </div>
+        </div>
+        
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 3" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 3</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$51</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$5.1</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 3', 51, 5.1)">Invierte ahora</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 4" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 4</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$136</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$13.6</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 4', 136, 13.6)">Invierte ahora</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 5" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 5</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$341</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$34.1</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 5', 341, 34.1)">Invierte ahora</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 6" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 6</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$1036</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$103.6</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 6', 1036, 103.6)">Invierte ahora</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 7" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 7</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$2036</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$203.6</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 7', 2036, 203.6)">Invierte ahora</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 8" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 8</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$4036</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$403.6</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 8', 4036, 403.6)">Invierte ahora</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 9" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 9</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$9036</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$903.6</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 9', 9036, 903.6)">Invierte ahora</button>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="./Imagen/00.png" alt="Paquete Premium 10" class="imagen-tarjeta">
+            <div class="info">
+                <h3>Premium 10</h3>
+                <p><strong>Cantidad:</strong> <span class="verde">USD$15,036</span></p>
+                <p><strong>Ingresos diarios:</strong> <span class="verde">USD$1,503.6</span></p>
+                <button class="btn-invertir" onclick="comprarPaquete('Premium 10', 15036, 1503.6)">Invierte ahora</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <nav class="footer-nav">
+            <ul class="footer-links">
+                <li><a href="pagina.html">🏠Inicio</a></li>
+                <li><a href="Inversion.html">💰Inversión</a></li>
+                <li><a href="Cuenta.html">📊Cuenta</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; 2025 Mi Empresa</p>
+    </footer>
+
+   
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registrado con éxito: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar el ServiceWorker: ', error);
+        });
+    });
+  }
+        // Variables iniciales
+        let saldo = parseFloat(localStorage.getItem("fondos")) || 0;
+        let paquetesActivos = JSON.parse(localStorage.getItem("paquetes")) || [];
+        
+        // Función para actualizar el saldo
+        function actualizarSaldo() {
+            document.getElementById('fondos').textContent = saldo.toFixed(2);
+            localStorage.setItem("fondos", saldo.toFixed(2));
+        }
+    
+        // Función para comprar paquetes
+        function comprarPaquete(nombre, costoPaquete, gananciaDiaria) {
+            if (saldo >= costoPaquete) {
+                saldo -= costoPaquete;
+                alert(`Has comprado el paquete ${nombre} por USD$${costoPaquete}.`);
+    
+                let fechaCompra = Date.now();
+                paquetesActivos.push({ nombre, gananciaDiaria, fechaCompra });
+                actualizarSaldo();
+                mostrarPaquetes();
+                localStorage.setItem("paquetes", JSON.stringify(paquetesActivos));
+            } else {
+                alert("No tienes suficiente saldo para comprar este paquete.");
+            }
+        }
+    
+        // Función para calcular y registrar ganancias
+        function calcularGananciasPendientes() {
+            let ahora = Date.now();
+            let totalGanancia = 0;
+    
+            paquetesActivos.forEach((paquete) => {
+                let tiempoPasado = ahora - paquete.fechaCompra;
+                let diasPasados = Math.floor(tiempoPasado / (1000 * 60 * 60 * 24));
+    
+                if (diasPasados >= 1) {
+                    totalGanancia += paquete.gananciaDiaria * diasPasados;
+                    paquete.fechaCompra = ahora; // Actualiza la fecha de compra
+                }
+            });
+    
+            if (totalGanancia > 0) {
+                saldo += totalGanancia;
+                actualizarSaldo();
+                añadirGananciaAlHistorial(totalGanancia); // Registrar ganancia en el historial
+                alert(`Se han acumulado USD$${totalGanancia.toFixed(2)} de ganancias.`);
+            }
+    
+            localStorage.setItem("paquetes", JSON.stringify(paquetesActivos));
+        }
+    
+        // Función para añadir ganancias al historial
+        function añadirGananciaAlHistorial(ganancia) {
+            const historialGanancias = JSON.parse(localStorage.getItem("historialGanancias")) || [];
+            const nuevaEntrada = {
+                fecha: Date.now(),
+                ganancia: ganancia
+            };
+            historialGanancias.push(nuevaEntrada);
+            localStorage.setItem("historialGanancias", JSON.stringify(historialGanancias));
+        }
+    
+        function mostrarPaquetes() {
+    const listaPaquetes = document.getElementById('lista-paquetes');
+    listaPaquetes.innerHTML = '';
+
+    paquetesActivos.forEach(paquete => {
+        const fechaCompra = new Date(paquete.fechaCompra).toLocaleString();
+        const li = document.createElement('li');
+        li.textContent = `${paquete.nombre} - Ganancia diaria: USD$${paquete.gananciaDiaria} - Comprado el: ${fechaCompra}`;
+        listaPaquetes.appendChild(li);
+    });
+}
+
+        // Al cargar la página, calcular ganancias y actualizar saldo
+        document.addEventListener("DOMContentLoaded", function () {
+            calcularGananciasPendientes();
+            actualizarSaldo();
+            mostrarPaquetes();
+        });
+    </script>
+    

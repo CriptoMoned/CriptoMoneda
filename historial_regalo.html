@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Transferencias</title>
+    <link rel="stylesheet" href="./css/regalo.css">
+  
+    <meta name="description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta name="theme-color" content="#007bff">
+      <!-- Íconos -->
+    <link rel="icon" href="./Imagen/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./Imagen/icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="og:title" content="Depósito USDT - CriptoMoned">
+    <meta property="og:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="twitter:title" content="Depósito USDT - CriptoMoned">
+    <meta property="twitter:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Transferencias</h1>
+        <table id="tablaTransferencias">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Transferencia (USDT)</th>
+                </tr>
+            </thead>
+            <tbody id="registroBody">
+                <!-- Las transferencias aparecerán aquí -->
+            </tbody>
+        </table>
+        </div>
+    
+      <p><a href="regalo.html" id="btnRegresar" class="boton-regresar">Regresar</a></p>
+    
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registrado con éxito: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar el ServiceWorker: ', error);
+        });
+    });
+  }
+</script>
+    <script src="./js/historial_regalo.js"></script>
+</body>
+</html>

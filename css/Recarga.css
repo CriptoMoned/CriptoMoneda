@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+@media (max-width: 600px) {
+  body {
+      background-color: lightblue;
+  }
+}
+
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.h2 {
+  color: #2c3e50;
+}
+
+.qr-section {
+  margin: 20px 0;
+}
+
+.qr-img {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.btn-depositar {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.formulario {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.formulario input,
+.qr-section input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.formulario button,
+.qr-section button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.formulario button {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.formulario button:hover {
+  background-color: #1b5e20;
+}
+
+.qr-section button {
+  background-color: #007bff;
+  color: white;
+}
+
+.qr-section button:hover {
+  background-color: #0056b3;
+}
+
+.copy-container {
+  margin: 20px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.upload-section {
+  margin-bottom: 15px;
+}
+
+.custom-file-input {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.custom-file-input input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#file-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

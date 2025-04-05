@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Depósito USDT</title>
+    <link rel="stylesheet" href="./css/Recarga.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <meta name="description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta name="theme-color" content="#007bff">
+      <!-- Íconos -->
+    <link rel="icon" href="./Imagen/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./Imagen/icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="og:title" content="Depósito USDT - CriptoMoned">
+    <meta property="og:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="twitter:title" content="Depósito USDT - CriptoMoned">
+    <meta property="twitter:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+</head>
+<body>
+    <div class="container">
+        <h2 class="h2">Cuenta de Depósito</h2>
+        
+        <div class="qr-section">
+            <img src="./Imagen/qr.jpeg" alt="Código QR" class="qr-img">
+            <p>Escanea el código o copia la dirección para depositar.</p>
+            
+            <div class="copy-container">
+                <input type="text" id="direccionBinance" value="TWQ4GWkA8BFSBaGpthqWQYPinGrewTN4HX" readonly>
+                <button onclick="copiarTexto()">Copiar</button>
+            </div>
+        </div>
+
+        <form class="formulario" onsubmit="return confirmarDeposito();">
+            <label for="monto">Monto depositado (USDT):</label>
+            <input type="number" id="monto" name="monto" placeholder="Ej: 50.00" min="5" required>
+            
+
+
+            <div class="upload-section">
+                <label for="comprobante">Subir comprobante del depósito:</label>
+                <div class="custom-file-input">
+            <input type="file" id="comprobante" name="comprobante" accept="image/*">
+            <span id="file-name">Ningún archivo seleccionado</span>
+                </div>
+</div>
+
+            <button type="submit">Confirmar Depósito</button>
+            <p><a href="Cuenta.html" class="btn-depositar">Regresar</a></p>
+        </form>
+    </div>
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registrado con éxito: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar el ServiceWorker: ', error);
+        });
+    });
+  }
+</script>
+    <script src="./js/recarga.js"></script>
+
+</body>
+</html>

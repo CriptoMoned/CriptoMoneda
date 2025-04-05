@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #1b1b32;
+    color: white;
+    overflow: hidden;
+}
+@media (max-width: 600px) {
+}
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.balance {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.regalos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.regalo {
+    width: 80px;
+    height: 80px;
+    background-color: red;
+    border-radius: 10px;
+    cursor: pointer;
+    background-image: url('gift.png'); /* Imagen de un regalo */
+    background-size: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.regalo:hover {
+    transform: scale(1.1);
+}
+
+.abierto {
+    background-color: green;
+    background-image: none;
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: abrir 0.5s ease-in-out forwards;
+}
+
+@keyframes abrir {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+p {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* Animación de monedas */
+#monedas {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
+.moneda {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('coin.png'); /* Imagen de una moneda */
+    background-size: cover;
+    animation: caer 2s linear forwards;
+}
+
+@keyframes caer {
+    0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+}
+
+.boton-regresar {
+    background-color: #4CAF50; /* Color verde */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano al pasar */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-top: 20px; /* Espacio arriba */
+    text-decoration: none; /* Quitar la línea del enlace */
+}
+
+.boton-regresar:hover {
+    background-color: #fdfdfd; /* Color verde más oscuro al pasar el mouse */
+}
+.btn-transferir {
+    background-color: #909090; /* Verde */
+    color: rgb(255, 248, 248);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-transferir:hover {
+    background-color: #45a049; /* Verde más oscuro */
+    transform: scale(1.05);
+}
+
+.btn-transferir:active {
+    background-color: #3e8e41;
+    transform: scale(0.98);
+}
+
+/* Contenedor de balance con posición relativa */
+.balance {
+    position: relative;  /* Esto permite que los elementos dentro se posicionen con respecto a este contenedor */
+}
+
+/* Estilo para el botón de registro con imagen */
+.btn-registro {
+    position: absolute;
+    top: 10px;  /* Ajusta la distancia desde la parte superior del contenedor */
+    right: 10px;  /* Ajusta la distancia desde la parte derecha del contenedor */
+    display: inline-block;
+    width: 50px;  /* Ajusta el tamaño de la imagen */
+    height: 50px;  /* Ajusta el tamaño de la imagen */
+    text-align: center;
+}
+
+.btn-registro img {
+    width: 100%;  /* La imagen se ajusta al tamaño del botón */
+    height: 100%;  /* La imagen se ajusta al tamaño del botón */
+    border-radius: 50%;  /* Opcional: hace que la imagen sea redonda */
+}
+
+/* Opcional: efecto hover para el botón */
+.btn-registro:hover {
+    opacity: 0.8;  /* Cambio de opacidad cuando el cursor pasa sobre el botón */
+}

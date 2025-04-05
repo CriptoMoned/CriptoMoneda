@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Retiros</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <meta name="description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta name="theme-color" content="#007bff">
+      <!-- Íconos -->
+    <link rel="icon" href="./Imagen/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./Imagen/icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="og:title" content="Depósito USDT - CriptoMoned">
+    <meta property="og:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="twitter:title" content="Depósito USDT - CriptoMoned">
+    <meta property="twitter:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    <style>
+        /* Estilos previos */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .main-header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .ganancias-historial {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h3 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Historial de Retiros</h1>
+    </header>
+
+    <div class="ganancias-historial">
+        <h3>Historial</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody id="historialRetiros"></tbody>
+        </table>
+    </div>
+
+    <footer class="main-footer">
+        <nav class="footer-nav">
+            <ul class="footer-links">
+                <li><a href="index.html">🏠Inicio</a></li>
+                <li><a href="Inversion.html">💰Inversión</a></li>
+                <li><a href="Cuenta.html">📊Cuenta</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; 2025 Mi Empresa</p>
+    </footer>
+
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registrado con éxito: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar el ServiceWorker: ', error);
+        });
+    });
+  }
+        document.addEventListener("DOMContentLoaded", function() {
+            // Generar un retraso aleatorio entre 1 y 3 minutos (60000 a 180000 milisegundos)
+            const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000;
+            setTimeout(cargarHistorialRetiros, retraso);
+        });
+
+        function cargarHistorialRetiros() {
+            const historial = JSON.parse(localStorage.getItem("historialRetiros")) || [];
+            const tbody = document.getElementById("historialRetiros");
+
+            historial.forEach(retiro => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td><strong>${retiro.fecha}</strong></td>
+                    <td><strong>${retiro.monto.toFixed(2)}</strong></td>
+                    <td><strong>${retiro.estado}</strong></td>
+                    <td><strong>${retiro.detalles}</strong></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+</html>

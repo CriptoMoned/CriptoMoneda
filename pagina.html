@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cripto</title>
+    <link rel="stylesheet" href="./css/styles.css">
+  
+    <meta name="description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta name="theme-color" content="#007bff">
+      <!-- Íconos -->
+    <link rel="icon" href="./Imagen/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./Imagen/icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="og:title" content="Depósito USDT - CriptoMoned">
+    <meta property="og:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="twitter:title" content="Depósito USDT - CriptoMoned">
+    <meta property="twitter:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+</head>
+<body>
+    <header class="main-header">
+       
+        <img src="./Imagen/logo.png" class="header-logo" alt="Logo">
+
+        <nav class="main-nav">
+            <div class="nav-buttons-container">
+                <a href="Recarga.html" class="nav-button">
+                    <img src="./Imagen/re.png" alt="inversión" class="nav-icon">
+                    <span class="nav-label">Recarga</span>
+                </a>
+                
+                <a href="Empresa.html" class="nav-button">
+                    <img src="./Imagen/emp2.png" alt="Emprender" class="nav-icon">
+                    <span class="nav-label">Empresa</span>
+                </a>
+                
+                <a href="for retiro.html" class="nav-button">
+                    <img src="./Imagen/ret.png" alt="Retiro" class="nav-icon">
+                    <span class="nav-label">Retiro</span>
+                </a>
+                
+            </div>
+        </nav>
+       
+    </header>
+    
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="./Imagen/1.png" alt="Imagen 1">
+            <img src="./Imagen/4.png" alt="Imagen 2">
+            <img src="./Imagen/1.jpg" alt="Imagen 3">
+            <img src="./Imagen/3.jpg" alt="Imagen 4">
+        </div>
+    </div>
+
+   
+        
+       
+
+    
+    <h2>Registro de Retiros</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Dirección</th>
+                    <th>Cantidad (USDT)</th>
+                </tr>
+            </thead>
+            <tbody id="withdrawTable">
+                <!-- Las transacciones se agregarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+
+    
+    <footer class="main-footer">
+    <nav class="footer-nav">
+        <ul class="footer-links">
+            <li><a href="pagina.html">🏠Inicio</a></li>
+            <li><a href="Inversion.html">💰Inversión</a></li>
+            <li><a href="Cuenta.html">📊Cuenta</a></li>
+        </ul>
+    </nav>
+    <p class="copyright">&copy; 2025 Mi Empresa</p>
+</footer>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registrado con éxito: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar el ServiceWorker: ', error);
+        });
+    });
+  }
+</script>
+    <script src="./js/funcion.js"></script>
+</body>
+</html>

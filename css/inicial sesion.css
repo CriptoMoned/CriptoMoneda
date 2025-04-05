@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #020202, #000d4f);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+background: white;
+color: black;
+padding: 20px;
+border-radius: 10px;
+width: 300px;
+text-align: center;
+}
+.toggle { 
+    color: black;
+}
+.container1 {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    }
+
+.logo {
+width: 100px;
+margin-bottom: 10px;
+}
+
+.toggle-buttons {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+    background: white;
+    border-bottom: 3px solid cyan;
+}
+
+
+.toggle {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+}
+
+.toggle.active {
+background: white;
+border-bottom: 3px solid cyan;
+}
+
+form {
+display: flex;
+flex-direction: column;
+text-align: left;
+}
+
+label {
+margin: 10px 0 5px;
+font-size: 14px;
+}
+
+input {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+width: calc(100% - 22px);
+}
+
+.btn {
+background: cyan;
+color: black;
+border: none;
+padding: 10px;
+margin-top: 20px;
+cursor: pointer;
+
+}
+
+.btn-secondary {
+background: white;
+color: black;
+border: 1px solid black;
+padding: 10px;
+width: 100%;
+margin-top: 10px;
+cursor: pointer;
+}

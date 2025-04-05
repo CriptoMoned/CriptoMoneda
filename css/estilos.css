@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f8f0;
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+.container3 {
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subtext {
+    font-size: 12px;
+    color: #c55;
+    margin-bottom: 10px;
+}
+
+.balance {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.balance p {
+    margin: 0;
+    color: #333;
+}
+
+.balance span {
+    font-size: 22px;
+    color: green;
+    font-weight: bold;
+}
+
+.method-select {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.method-select button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.method-select .active {
+    background-color: #0a8533;
+    color: white;
+    border: 1px solid #0a8533; /* Añadido valor para el borde */
+}
+
+.method-select button:hover {
+    background-color: #e0e0e0; /* Color de fondo al pasar el mouse */
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.confirm-btn {
+    background-color: #0a8533;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #087a29; /* Color de fondo al pasar el mouse */
+}
+
+.note {
+    font-size: 12px;
+    color: #666;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}

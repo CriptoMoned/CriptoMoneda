@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro USDT</title>
+  
+    <meta name="description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta name="theme-color" content="#007bff">
+      <!-- Íconos -->
+    <link rel="icon" href="./Imagen/icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./Imagen/icon-192x192.png">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="og:title" content="Depósito USDT - CriptoMoned">
+    <meta property="og:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
+    <meta property="twitter:title" content="Depósito USDT - CriptoMoned">
+    <meta property="twitter:description" content="Realiza depósitos en USDT para comenzar a invertir">
+    <meta property="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cce7f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 390px;
+            width: 90%;
+        }
+
+        .balance {
+            background: #f2f2f2;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .balance p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .balance .amount {
+            color: green;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .network-btn {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        input, select, button {
+            width: 99%;
+            margin: 10px 0;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        .note {
+            margin-top: 10px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .success-message {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Cuenta Retiro</h2>
+        <p style="color: red;">Todos los Domingos</p>
+
+        <div class="balance">
+            <p>Balance total</p>
+            <p class="amount">0.00 USDT</p>
+        </div>
+
+
+        <form id="retiroForm" action="https://formsubmit.co/Bit3sh4dow@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="javascript:void(0)">
+            <input type="hidden" name="_subject" value="Nueva solicitud de retiro USDT">
+            <input type="hidden" name="_template" value="table">
+            
+            <input type="text" name="Nombre" placeholder="Tu nombre" required>
+            <select name="Red_USDT" required>
+                <option value="" disabled selected>Selecciona la red</option>
+                <option value="TRC20">TRC20</option>
+                <option value="BEP20">BEP20</option>
+            </select>
+            <input type="text" name="Dirección_USDT" placeholder="Dirección USDT" required>
+            <input type="number" name="Monto_USDT" placeholder="Monto a enviar (USDT)" step="0.01" required>
+
+            <button type="submit">Confirmar</button>
+            <button type="button" onclick="window.history.back()">Regresar</button>
+        </form>
+
+        <div id="successMessage" class="success-message">
+            ¡Solicitud enviada con éxito! Su retiro llegará dentro de 15 minutos.
+        </div>
+
+      
+    </div>
+
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registrado con éxito: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('Error al registrar el ServiceWorker: ', error);
+        });
+    });
+  }
+        document.addEventListener("DOMContentLoaded", function() {
+            actualizarBalanceEnPantalla(); // Actualiza el balance al cargar la página
+        });
+
+        function actualizarBalanceEnPantalla() {
+            const balanceElemento = document.querySelector(".amount");
+            let fondos = parseFloat(localStorage.getItem("fondos")) || 0;
+            balanceElemento.textContent = fondos.toFixed(2) + " USDT";
+        }
+
+        document.getElementById("retiroForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const form = e.target;
+
+            const ahora = new Date();
+            const dia = ahora.getDay(); // 0 = Domingo
+            const hora = ahora.getHours();
+            const minutos = ahora.getMinutes();
+
+            // Verifica si es domingo y está dentro del horario permitido
+            if (dia !== 0 || (hora < 9 || (hora === 18 && minutos > 0))) {
+                alert("Los retiros solo se pueden hacer los domingos entre las 9:00 y las 18:00.");
+                return;
+            }
+
+            const monto = parseFloat(form["Monto_USDT"].value);
+            let fondos = parseFloat(localStorage.getItem("fondos")) || 0;
+
+            if (monto > fondos) {
+                alert("No tienes suficientes fondos para realizar este retiro.");
+                return;
+            }
+
+            fondos -= monto;
+            localStorage.setItem("fondos", fondos.toFixed(2));
+
+            registrarRetiro(monto);
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("successMessage").style.display = "block";
+                    form.reset();
+                    actualizarBalanceEnPantalla();
+                    setTimeout(() => {
+                        document.getElementById("successMessage").style.display = "none";
+                    }, 5000);
+                }
+            })
+            .catch(error => {
+                alert("Error al enviar el formulario. Por favor, inténtalo de nuevo.");
+            });
+        });
+
+        function registrarRetiro(monto) {
+            const historial = JSON.parse(localStorage.getItem("historialRetiros")) || [];
+            const fecha = new Date().toLocaleString();
+            historial.push({ fecha, monto, estado: "Completado", detalles: "Completado con éxito." });
+            localStorage.setItem("historialRetiros", JSON.stringify(historial));
+        }
+    </script>
+
+</body>
+</html>
