@@ -1,6 +1,7 @@
 function confirmarDeposito() {
     const monto = parseFloat(document.getElementById("monto").value);
     const comprobante = document.getElementById("comprobante").files[0];
+    const usuario = document.getElementById('usuario').value.trim();
 
     if (comprobante) {
         const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000; // Entre 1 y 3 minutos
@@ -16,6 +17,21 @@ function confirmarDeposito() {
         alert("Por favor, sube un comprobante del depósito.");
         return false;
     }
+
+ if (usuario === "") {
+        alert("Por favor ingresa tu usuario de Binance.");
+        return false;
+    }
+      // Validación del formato del usuario
+    const formatoUsuarioValido = /^[a-zA-Z0-9._-]+$/;
+    if (!formatoUsuarioValido.test(usuario)) {
+        alert("El usuario solo puede contener letras, números, puntos, guiones o guiones bajos.");
+        return false;
+    }
+     return true;
+}
+
+    
 }
 function copiarTexto() {
     var texto = document.getElementById("direccionBinance");  // Obtener el input
