@@ -17,6 +17,18 @@ function confirmarDeposito() {
         return false;
     }
 }
+function copiarTexto() {
+    var texto = document.getElementById("direccionBinance");  // Obtener el input
+    texto.select();  // Seleccionar el contenido
+    texto.setSelectionRange(0, 99999);  // Para dispositivos móviles
+
+    try {
+        document.execCommand("copy");  // Intentar copiar al portapapeles
+        alert("Texto copiado: " + texto.value);  // Opcional: Mostrar un mensaje al usuario
+    } catch (err) {
+        console.error("No se pudo copiar el texto: ", err);  // Manejo de errores
+    }
+}
 
 function completarDeposito(monto) {
     let fondos = parseFloat(localStorage.getItem("fondos")) || 0;
