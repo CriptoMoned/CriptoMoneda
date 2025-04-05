@@ -30,6 +30,25 @@ function copiarTexto() {
     }
 }
 
+function validarUsuario() {
+    const usuario = document.getElementById('usuario').value.trim();
+
+    if (usuario === "") {
+        alert("Por favor ingresa tu usuario de Binance.");
+        return false;
+    }
+
+    // Puedes agregar validaciones adicionales si deseas un formato específico
+    // Por ejemplo: sin espacios, solo letras y números, etc.
+    const formatoValido = /^[a-zA-Z0-9._-]+$/;
+    if (!formatoValido.test(usuario)) {
+        alert("El usuario solo puede contener letras, números, puntos, guiones o guiones bajos.");
+        return false;
+    }
+
+    return true;
+}
+
 function completarDeposito(monto) {
     let fondos = parseFloat(localStorage.getItem("fondos")) || 0;
     fondos += monto;
