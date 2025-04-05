@@ -30,11 +30,6 @@ function copiarTexto() {
     }
 }
 
-
-
-
-
-
 function completarDeposito(monto) {
     let fondos = parseFloat(localStorage.getItem("fondos")) || 0;
     fondos += monto;
