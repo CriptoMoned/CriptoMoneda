@@ -18,21 +18,6 @@ function confirmarDeposito() {
         return false;
     }
 
- if (usuario === "") {
-        alert("Por favor ingresa tu usuario de Binance.");
-        return false;
-    }
-      // Validación del formato del usuario
-    const formatoUsuarioValido = /^[a-zA-Z0-9._-]+$/;
-    if (!formatoUsuarioValido.test(usuario)) {
-        alert("El usuario solo puede contener letras, números, puntos, guiones o guiones bajos.");
-        return false;
-    }
-     return true;
-}
-
-    
-}
 function copiarTexto() {
     var texto = document.getElementById("direccionBinance");  // Obtener el input
     texto.select();  // Seleccionar el contenido
