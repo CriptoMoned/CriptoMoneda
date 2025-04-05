@@ -1,7 +1,6 @@
 function confirmarDeposito() {
     const monto = parseFloat(document.getElementById("monto").value);
     const comprobante = document.getElementById("comprobante").files[0];
-    const usuario = document.getElementById("usuario").value.trim();
 
     if (comprobante) {
         const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000; // Entre 1 y 3 minutos
@@ -17,7 +16,7 @@ function confirmarDeposito() {
         alert("Por favor, sube un comprobante del depósito.");
         return false;
     }
-
+}
 function copiarTexto() {
     var texto = document.getElementById("direccionBinance");  // Obtener el input
     texto.select();  // Seleccionar el contenido
@@ -30,8 +29,6 @@ function copiarTexto() {
         console.error("No se pudo copiar el texto: ", err);  // Manejo de errores
     }
 }
-
-
 
 function completarDeposito(monto) {
     let fondos = parseFloat(localStorage.getItem("fondos")) || 0;
