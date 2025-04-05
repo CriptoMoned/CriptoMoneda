@@ -31,7 +31,6 @@
 <body>
     <div class="container">
         <h2 class="h2">Cuenta de Depósito</h2>
-        <h2 class="h2">Tron (TRC20) </h2>
         
         <div class="qr-section">
             <img src="./Imagen/qr.jpeg" alt="Código QR" class="qr-img">
@@ -42,12 +41,6 @@
                 <button onclick="copiarTexto()">Copiar</button>
             </div>
         </div>
-
-        <form class="formulario" onsubmit="return validarUsuario();">
-    <label for="usuario">Usuario de Binance:</label>
-    <input type="text" id="usuario" name="usuario" placeholder="Ej: juanperez123" required>
-
-
 
         <form class="formulario" onsubmit="return confirmarDeposito();">
             <label for="monto">Monto depositado (USDT):</label>
