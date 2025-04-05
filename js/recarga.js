@@ -1,7 +1,7 @@
 function confirmarDeposito() {
     const monto = parseFloat(document.getElementById("monto").value);
     const comprobante = document.getElementById("comprobante").files[0];
-    const usuario = document.getElementById('usuario').value.trim();
+    const usuario = document.getElementById("usuario").value.trim();
 
     if (comprobante) {
         const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000; // Entre 1 y 3 minutos
