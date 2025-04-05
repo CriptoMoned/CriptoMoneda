@@ -67,8 +67,7 @@ addNewTransaction();
 // Generar una nueva transacción cada 3 segundos
 setInterval(addNewTransaction, 10000);
 
- // Verificar si el usuario está autenticado
- if (localStorage.getItem('loggedIn') !== 'true') {
-  alert('Debes iniciar sesión para acceder a esta página.');
-  window.location.href = 'pagina.html'; // Redirigir al inicio de sesión
+if (localStorage.getItem('loggedIn') !== 'true') {
+    alert('Debes iniciar sesión para acceder a esta página.');
+    window.location.href = 'index.html';
 }
