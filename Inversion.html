@@ -5,27 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cripto</title>
     <link rel="stylesheet" href="./css/styles.css">
-      
-    <meta name="description" content="Realiza depósitos en USDT para comenzar a invertir">
+    
+    <!-- Metadatos esenciales -->
+    <meta name="description" content="Plataforma de inversión en criptomonedas con rendimientos diarios">
     <meta name="theme-color" content="#007bff">
-      <!-- Íconos -->
+    
+    <!-- Ícono básico (funciona sin manifest) -->
     <link rel="icon" href="./Imagen/icon.png" type="image/png">
-    <link rel="apple-touch-icon" href="./Imagen/icon-192x192.png">
-    <link rel="manifest" href="./manifest.json">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook (optimizado para compartir) -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
-    <meta property="og:title" content="Depósito USDT - CriptoMoned">
-    <meta property="og:description" content="Realiza depósitos en USDT para comenzar a invertir">
-    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    <meta property="og:url" content="https://criptomoned.github.io/CriptoMoned/pagina.html">
+    <meta property="og:title" content="CriptoMoned - Plataforma de Inversión">
+    <meta property="og:description" content="Invierte en criptomonedas con rendimientos diarios garantizados">
+    <meta property="og:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://criptomoned.github.io/CriptoMoned/Recarga.html">
-    <meta property="twitter:title" content="Depósito USDT - CriptoMoned">
-    <meta property="twitter:description" content="Realiza depósitos en USDT para comenzar a invertir">
-    <meta property="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/qr.jpeg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CriptoMoned - Plataforma de Inversión">
+    <meta name="twitter:description" content="Invierte en criptomonedas con rendimientos diarios garantizados">
+    <meta name="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/logo.png">
 </head>
 <body>
 
@@ -178,17 +179,6 @@
 
    
     <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          console.log('ServiceWorker registrado con éxito: ', registration.scope);
-        })
-        .catch(error => {
-          console.log('Error al registrar el ServiceWorker: ', error);
-        });
-    });
-  }
         // Variables iniciales
         let saldo = parseFloat(localStorage.getItem("fondos")) || 0;
         let paquetesActivos = JSON.parse(localStorage.getItem("paquetes")) || [];
