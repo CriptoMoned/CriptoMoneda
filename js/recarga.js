@@ -1,6 +1,24 @@
 function confirmarDeposito() {
+    const usuario = document.getElementById('usuario').value.trim();
     const monto = parseFloat(document.getElementById("monto").value);
     const comprobante = document.getElementById("comprobante").files[0];
+    
+
+    if (usuario === "") {
+        alert("Por favor ingresa tu usuario de Binance.");
+        return false;
+    }
+
+    // Puedes agregar validaciones adicionales si deseas un formato específico
+    // Por ejemplo: sin espacios, solo letras y números, etc.
+    const formatoValido = /^[a-zA-Z0-9._-]+$/;
+    if (!formatoValido.test(usuario)) {
+        alert("El usuario solo puede contener letras, números, puntos, guiones o guiones bajos.");
+        return false;
+    }
+
+    return true;
+}
 
     if (comprobante) {
         const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000; // Entre 1 y 3 minutos
