@@ -47,15 +47,12 @@ function confirmarDeposito() {
     return true;
 }
 
-
-
-
-
-
 function copiarTexto() {
-    var texto = document.getElementById("direccionBinance");  // Obtener el input
-    texto.select();  // Seleccionar el contenido
-    texto.setSelectionRange(0, 99999);  // Para dispositivos móviles
+    const direccionBinance = document.getElementById('direccionBinance');
+    direccionBinance.select();
+    document.execCommand('copy');
+    alert('Dirección copiada al portapapeles');
+}
 
     try {
         document.execCommand("copy");  // Intentar copiar al portapapeles
