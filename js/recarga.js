@@ -38,9 +38,14 @@ function confirmarDeposito() {
     // Mostrar alerta de confirmación
     alert(`El depósito de ${monto} USDT está siendo procesado. Esto puede tomar entre 1 y 3 minutos.`);
 
+    // Simular el tiempo de espera
+    setTimeout(() => {
+        alert(`El depósito de ${monto} USDT ha sido procesado.`);
+        localStorage.removeItem("depositoPendiente");
+    }, retraso);
+
     return true;
 }
-
 
 
 
