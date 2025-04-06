@@ -28,6 +28,7 @@
     <meta name="twitter:description" content="Invierte en criptomonedas con rendimientos diarios garantizados">
     <meta name="twitter:image" content="https://criptomoned.github.io/CriptoMoned/Imagen/logo.png">
     <style>
+        /* Estilos previos */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -112,52 +113,28 @@
     </footer>
 
     <script>
-        // Agrega un retiro con aparición entre 1 y 5 minutos
-        function agregarRetiroSimulado(monto, detalles) {
-            let historial = JSON.parse(localStorage.getItem("historialRetiros")) || [];
+        document.addEventListener("DOMContentLoaded", function() {
+            // Generar un retraso aleatorio entre 1 y 3 minutos (60000 a 180000 milisegundos)
+            const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000;
+            setTimeout(cargarHistorialRetiros, retraso);
+        });
 
-            const minutosEspera = Math.floor(Math.random() * 5) + 1;
-            const disponibleDesde = Date.now() + minutosEspera * 60000;
-
-            historial.push({
-                fecha: new Date().toLocaleDateString(),
-                monto: monto,
-                estado: "Pendiente",
-                detalles: detalles,
-                disponibleDesde: disponibleDesde
-            });
-
-            localStorage.setItem("historialRetiros", JSON.stringify(historial));
-        }
-
-        // Muestra solo los retiros disponibles según el tiempo
         function cargarHistorialRetiros() {
             const historial = JSON.parse(localStorage.getItem("historialRetiros")) || [];
             const tbody = document.getElementById("historialRetiros");
-            tbody.innerHTML = "";
-
-            const ahora = Date.now();
 
             historial.forEach(retiro => {
-                if (retiro.disponibleDesde <= ahora) {
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
-                        <td><strong>${retiro.fecha}</strong></td>
-                        <td><strong>${retiro.monto.toFixed(2)}</strong></td>
-                        <td><strong>Completado</strong></td>
-                        <td><strong>${retiro.detalles}</strong></td>
-                    `;
-                    tbody.appendChild(row);
-                }
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td><strong>${retiro.fecha}</strong></td>
+                    <td><strong>${retiro.monto.toFixed(2)}</strong></td>
+                    <td><strong>${retiro.estado}</strong></td>
+                    <td><strong>${retiro.detalles}</strong></td>
+                `;
+                tbody.appendChild(row);
             });
         }
-
-        document.addEventListener("DOMContentLoaded", cargarHistorialRetiros);
-
-        // EJEMPLO: Puedes llamar a esto desde consola para probar
-        // agregarRetiroSimulado(5.25, "Retiro vía Binance");
     </script>
-
     <script src="./js/auth.js"></script>
 </body>
 </html>
