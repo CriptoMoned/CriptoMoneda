@@ -1,37 +1,52 @@
 function confirmarDeposito() {
+    // Obtener los valores de los campos de entrada
     const usuario = document.getElementById('usuario').value.trim();
     const monto = parseFloat(document.getElementById("monto").value);
     const comprobante = document.getElementById("comprobante").files[0];
-    
 
+    // Validar que el usuario no esté vacío y cumpla con el formato esperado
     if (usuario === "") {
         alert("Por favor ingresa tu usuario de Binance.");
         return false;
     }
 
-    // Puedes agregar validaciones adicionales si deseas un formato específico
-    // Por ejemplo: sin espacios, solo letras y números, etc.
     const formatoValido = /^[a-zA-Z0-9._-]+$/;
     if (!formatoValido.test(usuario)) {
         alert("El usuario solo puede contener letras, números, puntos, guiones o guiones bajos.");
         return false;
     }
 
-    if (comprobante) {
-        const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000; // Entre 1 y 3 minutos
-        const tiempoFinal = Date.now() + retraso;
+    // Validar que el monto sea un número válido
+    if (isNaN(monto) || monto <= 0) {
+        alert("Por favor ingresa un monto válido.");
+        return false;
+    }
 
-        // Guardar el estado del depósito en localStorage
-        localStorage.setItem("depositoPendiente", JSON.stringify({ monto, tiempoFinal }));
-
-        alert(`El depósito de ${monto} USDT está siendo procesado. Esto puede tomar entre 1 y 3 minutos.`);
-
-        return true;
-    } else {
+    // Validar que se haya subido un comprobante
+    if (!comprobante) {
         alert("Por favor, sube un comprobante del depósito.");
         return false;
     }
+
+    // Simular el tiempo de procesamiento del depósito
+    const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000; // Entre 1 y 3 minutos
+    const tiempoFinal = Date.now() + retraso;
+
+    // Guardar el estado del depósito en localStorage
+    localStorage.setItem("depositoPendiente", JSON.stringify({ monto, tiempoFinal }));
+
+    // Mostrar alerta de confirmación
+    alert(`El depósito de ${monto} USDT está siendo procesado. Esto puede tomar entre 1 y 3 minutos.`);
+
+    return true;
 }
+
+
+
+
+
+
+
 function copiarTexto() {
     var texto = document.getElementById("direccionBinance");  // Obtener el input
     texto.select();  // Seleccionar el contenido
