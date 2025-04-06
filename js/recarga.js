@@ -17,9 +17,6 @@ function confirmarDeposito() {
         return false;
     }
 
-    return true;
-}
-
     if (comprobante) {
         const retraso = Math.floor(Math.random() * (180000 - 60000 + 1)) + 60000; // Entre 1 y 3 minutos
         const tiempoFinal = Date.now() + retraso;
