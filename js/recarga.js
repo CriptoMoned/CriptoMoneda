@@ -50,15 +50,11 @@ function confirmarDeposito() {
 function copiarTexto() {
     const direccionBinance = document.getElementById('direccionBinance');
     direccionBinance.select();
-    document.execCommand('copy');
-    alert('Dirección copiada al portapapeles');
-}
-
     try {
-        document.execCommand("copy");  // Intentar copiar al portapapeles
-        alert("Texto copiado: " + texto.value);  // Opcional: Mostrar un mensaje al usuario
+        document.execCommand('copy');
+        alert('Dirección copiada al portapapeles');
     } catch (err) {
-        console.error("No se pudo copiar el texto: ", err);  // Manejo de errores
+        console.error("No se pudo copiar el texto: ", err);
     }
 }
 
@@ -88,7 +84,7 @@ function añadirDepositoAlHistorial(monto) {
     localStorage.setItem("historialDepositos", JSON.stringify(historial));
 }
 
-// 🔹 Verificar cada 5 segundos si el depósito ya debe completarse
+// Verificar cada 5 segundos si el depósito ya debe completarse
 function verificarDepositoPendiente() {
     const depositoPendiente = JSON.parse(localStorage.getItem("depositoPendiente"));
 
@@ -107,7 +103,7 @@ setInterval(verificarDepositoPendiente, 5000);
 // También ejecutar al cargar la página
 window.addEventListener("load", verificarDepositoPendiente);
 
-// 🔹 Función para mostrar el mensaje de confirmación en cualquier página
+// Función para mostrar el mensaje de confirmación en cualquier página
 function mostrarMensajeRecarga() {
     const mensaje = localStorage.getItem("mensajeRecarga");
 
@@ -117,7 +113,7 @@ function mostrarMensajeRecarga() {
     }
 }
 
-// 🔹 Función para actualizar el saldo en pantalla sin recargar
+// Función para actualizar el saldo en pantalla sin recargar
 function actualizarSaldoEnPantalla() {
     const saldoElemento = document.getElementById("saldo"); // Asegúrate de tener un elemento con ID "saldo"
     if (saldoElemento) {
